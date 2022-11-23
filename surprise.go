@@ -13,14 +13,21 @@ var Width int
 var Height int
 var random *rand.Rand
 
-const civo_c0 = `xxxxxxxxxxxxxxx##xxxxxxxxxxx.xx
+const jon_c0 = `xxxxxxxxxxxxxxx##xxxxxxxxxxx.xx
 xxxxxxxxx##x##xxxxxxxxxxxxxxxxx
-xxxxxx##x##x##x##x##xxxxxxxxxxx
-xx___xx__xx_xx_xxx__xxxxxxxxx.x
-x/ __)(  )/ )( \ /  \xxxxxxxxxx
-( (__  )( \ \/ /(  O )xxxxxxxxx
-x\___)(__) \__/  \__/xxxxxxxx.x
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`
+.   *   ..  . *  *
+*  * @()Ooc()*   o  .
+    (Q@*0CG*O()  ___
+   |\_________/|/ _ \
+   |  |  |  |  | / | |
+   |  |  |  |  | | | |
+   |  |  |  |  | | | |
+   |  |  |  |  | \_| |
+   |  |  |  |  |\___/
+   |\_|__|__|_/|
+    \_________/
+	.   .    . 
+xxxxxx##x##x##x##x##xxxxxxxxxxx`
 
 const birthday_c0 = `
 @@@@@@@@@@@(_)@@@@@@@(_)
@@ -38,9 +45,9 @@ const birthday_c0 = `
 @@@@@|  .-. .-. .-. .-. . . .-.  .-. . . .  |
 @@@@@|  |(   |  |(   |  |-| |  ) |-|  |  |  |
 @@@@@|  '_' '-' ' '  '  . . '-'  ' '  '  .  |
-@@@@@|          .  . .-. .-. . .  ..        |
-@@@@@|          |\/| |-| |(  |<   ||        |
-@@_.-|          '  ' ' ' ' ' ' '  ..        |-._
+@@@@@|              . .-. . .  ..           |
+@@@@@|              | | | |\|  ||           |
+@@@@@|            '-' '-' ' '  ..           |-._
 .'   '.                                      `+"`"+`.
 :      `+"`"+`-.__                          __.-'      :
  ~.         `+"`````"+`""""""""""""""""'''''         .'
@@ -117,8 +124,8 @@ func NewConfetti() *Confetti {
 		Visible: true},
 		Timer:   0,
 		TimeOut: 3}
-	s.AddCostume(sprite.NewCostume(civo_c0, 'x'))
-	s.AddCostume(sprite.NewCostume(civo_c0, 'x'))
+	s.AddCostume(sprite.NewCostume(jon_c0, 'x'))
+	s.AddCostume(sprite.NewCostume(jon_c0, 'x'))
 	s.X = random.Intn(Width)
 	s.Y = -random.Intn(Height)
 	s.VY = random.Intn(2) + 1
@@ -174,9 +181,9 @@ func main() {
 	cake := NewCake()
 	allSprites.Sprites = append(allSprites.Sprites, cake)
 
-	txt := "Press 'ESC' to quit."
+	txt := ""
         c := sprite.NewCostume(txt, '~')
-        text := sprite.NewBaseSprite(Width/2-len(txt)/2, Height-2, c)
+        text := sprite.NewBaseSprite(Width/2-len(txt)/2, Height-3, c)
 	allSprites.Sprites = append(allSprites.Sprites, text)
 
 mainloop:
